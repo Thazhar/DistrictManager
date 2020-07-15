@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kNblcZbpmKzvTK2C5MhpVrC7RCyJQuIUJp4FeKKQtfe1+ZyqQ4T/ejJ8pr3AnQ5IZcBfMJHbuX3FHfW/FBr/Ag==",
+  "dgSpecHash": "gfIRPH3jd/yzCLqlBljKMSfgBDDcoVgc9YDEYbK8hy5gglu1y7g+kbEUC6oSiSlc7cj8NVuKalb6h1M9ZDFZ2w==",
   "success": true,
-  "projectFilePath": "F:\\Programmering\\DistrictAPITest\\DistrictAPI\\DistrictAPITest.csproj",
+  "projectFilePath": "F:\\Git Projects\\DistrictManager\\DistrictAPITest\\DistrictAPI\\DistrictAPITest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emilt\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\emilt\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.0\\automapper.extensions.microsoft.dependencyinjection.8.0.0.nupkg.sha512",
