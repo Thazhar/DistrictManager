@@ -34,7 +34,8 @@ namespace DistrictAPITest.Data
                 throw new ArgumentNullException(nameof(dis));
             }
 
-            _context.Database.ExecuteSqlRaw("INSERT INTO district (district_name, seller_id) VALUES (@DistrictName, @SellerId)",
+            _context.Database.ExecuteSqlRaw(
+                "INSERT INTO district (district_name, seller_id) VALUES (@DistrictName, @SellerId)",
                 new SqlParameter("@DistrictName", dis.DistrictName) , new SqlParameter("@SellerId", dis.SellerId));
         }
 

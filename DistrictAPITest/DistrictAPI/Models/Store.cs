@@ -17,9 +17,9 @@ namespace DistrictAPITest.Models
         public string StoreName { get; set; }
         [Column("district_id")]
         public int DistrictId { get; set; }
-        /*
+        
         [ForeignKey(nameof(DistrictId))]
         [InverseProperty("Store")]
-        public virtual District District { get; set; }*/
+        public virtual District District { get; set; }
     }
 }

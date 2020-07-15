@@ -10,8 +10,8 @@ namespace DistrictAPITest.Models
     {
         public District()
         {
-            //SecondarySeller = new HashSet<SecondarySeller>();
-            //Store = new HashSet<Store>();
+            SecondarySeller = new HashSet<SecondarySeller>();
+            Store = new HashSet<Store>();
         }
 
         [Key]
@@ -23,7 +23,7 @@ namespace DistrictAPITest.Models
         public string DistrictName { get; set; }
         [Column("seller_id")]
         public int SellerId { get; set; }
-        /*
+        
         [ForeignKey(nameof(SellerId))]
         [InverseProperty("District")]
         public virtual Seller Seller { get; set; }
@@ -31,6 +31,6 @@ namespace DistrictAPITest.Models
         public virtual ICollection<SecondarySeller> SecondarySeller { get; set; }
         [InverseProperty("District")]
         public virtual ICollection<Store> Store { get; set; }
-        */
+        
     }
 }

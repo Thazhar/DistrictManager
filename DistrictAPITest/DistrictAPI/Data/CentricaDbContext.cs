@@ -14,10 +14,10 @@ namespace DistrictAPITest.Data
         public virtual DbSet<District> Districts { get; set; }
         public virtual DbSet<Seller> Seller { get; set; }
         public virtual DbSet<Store> Store { get; set; }
-
-
-        /*
         public virtual DbSet<SecondarySeller> SecondarySeller { get; set; }
+
+
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -82,7 +82,7 @@ namespace DistrictAPITest.Data
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-        */
+        
 
     }
 }
