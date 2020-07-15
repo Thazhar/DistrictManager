@@ -25,7 +25,7 @@ namespace DistrictAPITest.Controllers
 
         //GET api/Districts
         [HttpGet]
-        public ActionResult<IEnumerable<District>> GetAllDistricts()
+        public ActionResult<IEnumerable<DistrictsReadDto>> GetAllDistricts()
         {
             var districtItems = _repository.GetAllDistricts();
             return Ok(_mapper.Map<IEnumerable<DistrictsReadDto>>(districtItems));
@@ -52,7 +52,7 @@ namespace DistrictAPITest.Controllers
 
             var districtsReadDto = _mapper.Map<DistrictsReadDto>(districtModel);
 
-            return CreatedAtRoute(nameof(GetDistrictById), new {Id = districtsReadDto.DistrictId}, districtsReadDto); //TODO: Always returns route to id 0
+            return CreatedAtRoute(nameof(GetDistrictById), new {Id = districtsReadDto.DistrictId}, districtsReadDto);
         }
 
         //PUT api/Districts/5
@@ -67,8 +67,6 @@ namespace DistrictAPITest.Controllers
             _mapper.Map(districtUpdateDto, districtModelFromRepo);
 
             _repository.UpdateDistrict(id, districtModelFromRepo);
-
-            //_repository.SaveChanges();
 
             return NoContent();
         }

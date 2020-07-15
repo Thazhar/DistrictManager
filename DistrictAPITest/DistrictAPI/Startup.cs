@@ -43,6 +43,7 @@ namespace DistrictAPITest
 
 
             services.AddScoped<IDistrictRepo, SqlDistrictRepo>();
+            services.AddScoped<ISellerRepo, SqlSellerRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
