@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using DistrictAPITest.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -17,20 +16,13 @@ namespace DistrictAPITest.Data
             _context = context;
         }
 
-        public bool SaveChanges()
-        {
-            return (_context.SaveChanges() >= 0);
-        }
-
         public IEnumerable<District> GetAllDistricts()
         {
-            //return _context.Districts.ToList(); //TODO: Change to SQL
             return _context.Districts.FromSqlRaw("SELECT * FROM district").ToList<District>();
         }
 
         public District GetDistrictById(int id)
         {
-            //return _context.Districts.FirstOrDefault(p => p.DistrictId == id); //TODO: Change to SQL
             return _context.Districts
                 .FromSqlRaw("SELECT * FROM district WHERE district_id = @Id", new SqlParameter("@Id", id)).FirstOrDefault();
         }
@@ -42,7 +34,6 @@ namespace DistrictAPITest.Data
                 throw new ArgumentNullException(nameof(dis));
             }
 
-            //_context.Districts.Add(dis);
             _context.Database.ExecuteSqlRaw("INSERT INTO district (district_name, seller_id) VALUES (@DistrictName, @SellerId)",
                 new SqlParameter("@DistrictName", dis.DistrictName) , new SqlParameter("@SellerId", dis.SellerId));
         }
@@ -65,7 +56,6 @@ namespace DistrictAPITest.Data
                 throw new ArgumentNullException(nameof(dis));
             }
 
-            //_context.Districts.Remove(dis);
             _context.Database.ExecuteSqlRaw("DELETE FROM district WHERE district_id = @DistrictId",
                 new SqlParameter("@DistrictId", dis.DistrictId));
         }

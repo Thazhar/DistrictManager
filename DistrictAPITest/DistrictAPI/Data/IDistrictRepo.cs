@@ -5,7 +5,6 @@ namespace DistrictAPITest.Data
 {
     public interface IDistrictRepo
     {
-        bool SaveChanges();
         IEnumerable<District> GetAllDistricts();
         District GetDistrictById(int id);
         void CreateDistrict(District dis);
