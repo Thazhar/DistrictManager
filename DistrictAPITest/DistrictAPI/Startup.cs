@@ -16,6 +16,7 @@ namespace DistrictAPITest
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -29,11 +30,17 @@ namespace DistrictAPITest
             services.AddControllers().AddNewtonsoftJson(s => s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver());
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            
-            services.AddCors(c =>
+
+            services.AddCors(options =>
             {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+                options.AddPolicy(name: "MyPolicy",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200")
+                            .WithMethods("PUT", "DELETE", "GET", "POST", "PATCH");
+                    });
             });
+
 
             services.AddScoped<IDistrictRepo, SqlDistrictRepo>();
         }

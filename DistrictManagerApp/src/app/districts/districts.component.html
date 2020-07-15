@@ -3,5 +3,7 @@
 <ul class="districts">
   <li *ngFor="let district of districts">
       <span>{{ district.districtName }}</span>
+      <button class="delete" title="delete district"
+      (click)="delete(district)">x</button>
   </li>
 </ul>

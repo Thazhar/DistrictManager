@@ -3,11 +3,13 @@ using AutoMapper;
 using DistrictAPITest.Data;
 using DistrictAPITest.Dtos;
 using DistrictAPITest.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DistrictAPITest.Controllers
 {
+    [EnableCors("MyPolicy")]
     [Route("api/[controller]")] //Route for how to get to the end-point ([controller] changes the route if the controller name is changed, maybe be wanted, maybe not)
     [ApiController] //Decorated for some default behaviour
     public class DistrictsController : ControllerBase

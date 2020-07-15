@@ -29,10 +29,18 @@ export class DistrictsService {
     this.handleError = httpErrorHandler.createHandleError('DistrictService');
     }
 
-    getAllDistricts (): Observable<District[]> {
-      return this.http.get<District[]>(this.districtUrl)
-        .pipe(
-          catchError(this.handleError('getAllDistricts', []))
-        );
-    }
+  getAllDistricts (): Observable<District[]> {
+    return this.http.get<District[]>(this.districtUrl)
+      .pipe(
+        catchError(this.handleError('getAllDistricts', []))
+      );
+  }
+
+  deleteDistrict(districtId: number): Observable<{}> {
+    const url = `${this.districtUrl}/${districtId}`;
+    return this.http.delete(url)
+      .pipe(
+        catchError(this.handleError('deleteHero'))
+      );
+  };
 }
