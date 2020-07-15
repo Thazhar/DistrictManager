@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Programmering\\DistrictAPITest\\DistrictAPI\\DistrictAPITest.csproj": {}
+    "F:\\Git Projects\\DistrictManager\\DistrictAPITest\\DistrictAPI\\DistrictAPITest.csproj": {}
   },
   "projects": {
-    "F:\\Programmering\\DistrictAPITest\\DistrictAPI\\DistrictAPITest.csproj": {
+    "F:\\Git Projects\\DistrictManager\\DistrictAPITest\\DistrictAPI\\DistrictAPITest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Programmering\\DistrictAPITest\\DistrictAPI\\DistrictAPITest.csproj",
+        "projectUniqueName": "F:\\Git Projects\\DistrictManager\\DistrictAPITest\\DistrictAPI\\DistrictAPITest.csproj",
         "projectName": "DistrictAPITest",
-        "projectPath": "F:\\Programmering\\DistrictAPITest\\DistrictAPI\\DistrictAPITest.csproj",
+        "projectPath": "F:\\Git Projects\\DistrictManager\\DistrictAPITest\\DistrictAPI\\DistrictAPITest.csproj",
         "packagesPath": "C:\\Users\\emilt\\.nuget\\packages\\",
-        "outputPath": "F:\\Programmering\\DistrictAPITest\\DistrictAPI\\obj\\",
+        "outputPath": "F:\\Git Projects\\DistrictManager\\DistrictAPITest\\DistrictAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -9,7 +9,7 @@ namespace DistrictAPITest.Data
         IEnumerable<District> GetAllDistricts();
         District GetDistrictById(int id);
         void CreateDistrict(District dis);
-        void UpdateDistrict(District dis);
+        void UpdateDistrict(int id, District dis);
         void DeleteDistrict(District dis);
     }
 }

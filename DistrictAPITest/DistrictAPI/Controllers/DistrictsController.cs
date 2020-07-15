@@ -45,14 +45,13 @@ namespace DistrictAPITest.Controllers
         [HttpPost]
         public ActionResult<DistrictsReadDto> CreateDistrict(DistrictsCreateDto districtsCreateDto)
         {
-            
             var districtModel = _mapper.Map<District>(districtsCreateDto); //Map to District from source districtsCreateDto
             _repository.CreateDistrict(districtModel);
             _repository.SaveChanges();
 
             var districtsReadDto = _mapper.Map<DistrictsReadDto>(districtModel);
 
-            return CreatedAtRoute(nameof(GetDistrictById), new {Id = districtsReadDto.DistrictId}, districtsReadDto);
+            return CreatedAtRoute(nameof(GetDistrictById), new {Id = districtsReadDto.DistrictId}, districtsReadDto); //TODO: Always returns route to id 0
         }
 
         //PUT api/Districts/5
@@ -66,9 +65,9 @@ namespace DistrictAPITest.Controllers
             }
             _mapper.Map(districtUpdateDto, districtModelFromRepo);
 
-            _repository.UpdateDistrict(districtModelFromRepo);
+            _repository.UpdateDistrict(id, districtModelFromRepo);
 
-            _repository.SaveChanges();
+            //_repository.SaveChanges();
 
             return NoContent();
         }
@@ -92,9 +91,7 @@ namespace DistrictAPITest.Controllers
 
             _mapper.Map(districtToPatch, districtModelFromRepo);
 
-            _repository.UpdateDistrict(districtModelFromRepo);
-
-            _repository.SaveChanges();
+            _repository.UpdateDistrict(id, districtModelFromRepo);
 
             return NoContent();
         }
