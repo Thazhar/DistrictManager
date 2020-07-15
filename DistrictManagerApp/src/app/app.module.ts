@@ -4,8 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DistrictsComponent } from './districts/districts.component';
-import { HttpErrorHandlerService } from './http-error-handler.service';
+import { HttpErrorHandlerService } from './Services/http-error-handler.service';
 import { DistrictDetailComponent } from './district-detail/district-detail.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DistrictDetailComponent } from './district-detail/district-detail.compo
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [HttpErrorHandlerService],
   bootstrap: [AppComponent]

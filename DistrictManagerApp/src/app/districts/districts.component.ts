@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { District } from './district';
-import { DistrictsService } from './districts.service';
+import { District } from '../Models/district';
+import { DistrictsService } from '../Services/districts.service';
 import { HttpClient } from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-districts',
@@ -10,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
   providers: [DistrictsService],
   styleUrls: ['./districts.component.css']
 })
+
 export class DistrictsComponent implements OnInit {
   districts: District[];
   focusDistrict: District;
@@ -29,5 +32,9 @@ export class DistrictsComponent implements OnInit {
   delete(district: District): void {
     this.districts = this.districts.filter(d => d !== district);
     this.districtsService.deleteDistrict(district.districtId).subscribe();
+  }
+
+  focus(district: District) {
+    this.focusDistrict = district;
   }
 }
