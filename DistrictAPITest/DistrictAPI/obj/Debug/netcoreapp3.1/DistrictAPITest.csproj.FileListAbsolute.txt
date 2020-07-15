@@ -109,8 +109,6 @@ F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\bin\Debug\netcoreapp
 F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.csprojAssemblyReference.cache
 F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.AssemblyInfoInputs.cache
 F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.AssemblyInfo.cs
-F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.csproj.CoreCompileInputs.cache
-F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.MvcApplicationPartsAssemblyInfo.cache
 F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.RazorTargetAssemblyInfo.cache
 F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.csproj.CopyComplete
 F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\staticwebassets\DistrictAPITest.StaticWebAssets.Manifest.cache
@@ -118,3 +116,9 @@ F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp
 F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.dll
 F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.pdb
 F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.genruntimeconfig.cache
+F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\bin\Debug\netcoreapp3.1\System.Web.Cors.dll
+F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\bin\Debug\netcoreapp3.1\System.Web.Http.Cors.dll
+F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.csproj.CoreCompileInputs.cache
+F:\Git Projects\DistrictManager\DistrictAPITest\DistrictAPI\obj\Debug\netcoreapp3.1\DistrictAPITest.MvcApplicationPartsAssemblyInfo.cache

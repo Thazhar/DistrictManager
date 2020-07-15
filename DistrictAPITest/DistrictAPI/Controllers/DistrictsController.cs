@@ -47,7 +47,6 @@ namespace DistrictAPITest.Controllers
         {
             var districtModel = _mapper.Map<District>(districtsCreateDto); //Map to District from source districtsCreateDto
             _repository.CreateDistrict(districtModel);
-            _repository.SaveChanges();
 
             var districtsReadDto = _mapper.Map<DistrictsReadDto>(districtModel);
 
@@ -106,7 +105,6 @@ namespace DistrictAPITest.Controllers
                 return NotFound();
             }
             _repository.DeleteDistrict(districtModelFromRepo);
-            _repository.SaveChanges();
 
             return Ok(_mapper.Map<DistrictsReadDto>(districtModelFromRepo));
         }

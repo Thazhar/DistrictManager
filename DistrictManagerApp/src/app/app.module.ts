@@ -1,16 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { DistrictsComponent } from './districts/districts.component';
+import { HttpErrorHandlerService } from './http-error-handler.service';
+import { DistrictDetailComponent } from './district-detail/district-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DistrictsComponent,
+    DistrictDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpErrorHandlerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

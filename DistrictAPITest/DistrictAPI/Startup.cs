@@ -29,6 +29,11 @@ namespace DistrictAPITest
             services.AddControllers().AddNewtonsoftJson(s => s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver());
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
 
             services.AddScoped<IDistrictRepo, SqlDistrictRepo>();
         }
@@ -44,6 +49,8 @@ namespace DistrictAPITest
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(options => options.AllowAnyOrigin());
 
             app.UseAuthorization();
 
