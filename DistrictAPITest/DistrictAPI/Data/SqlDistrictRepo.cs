@@ -36,7 +36,10 @@ namespace DistrictAPITest.Data
 
             _context.Database.ExecuteSqlRaw(
                 "INSERT INTO district (district_name, seller_id) VALUES (@DistrictName, @SellerId)",
-                new SqlParameter("@DistrictName", dis.DistrictName) , new SqlParameter("@SellerId", dis.SellerId));
+                new SqlParameter("@DistrictName", dis.DistrictName), new SqlParameter("@SellerId", dis.SellerId));
+            
+
+           
         }
 
         public void UpdateDistrict(int id, District dis)

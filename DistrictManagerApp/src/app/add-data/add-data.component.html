@@ -10,7 +10,7 @@
         <option style="color: #333333" *ngFor="let seller of sellers" [ngValue]="seller.sellerId">{{seller.sellerName}}</option>
       </select>
       <!-- (click) passes input value to add() and then clears the input -->
-      <button (click)="createDistrict(districtName.value, selectedSeller.sellerId)">
+      <button (click)="createDistrict(districtName.value, selectedSeller)">
         add
       </button>
     </div>
@@ -47,7 +47,7 @@
         <option style="color: #333333" *ngFor="let district of districts" [ngValue]="district.districtId">{{district.districtName}}</option>
       </select>
       <!-- (click) passes input value to add() and then clears the input -->
-      <button (click)="createStore(storeName.value, selectedDistrict.sellerId)">
+      <button (click)="createStore(storeName.value, selectedDistrict)">
         add
       </button>
     </div>

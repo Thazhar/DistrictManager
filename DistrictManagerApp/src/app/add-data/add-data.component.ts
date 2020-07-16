@@ -19,8 +19,8 @@ export class AddDataComponent implements OnInit {
   districts: District[];
   sellers: Seller[];
   stores: Store[];
-  selectedSeller: Seller;
-  selectedDistrict: District;
+  selectedSeller: number;
+  selectedDistrict: number;
 
 
   constructor(private districtsService: DistrictsService,

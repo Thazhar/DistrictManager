@@ -36,8 +36,8 @@ namespace DistrictAPITest
                 options.AddPolicy(name: "MyPolicy",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200")
-                            .WithMethods("PUT", "DELETE", "GET", "POST", "PATCH");
+                        builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+
                     });
             });
 
