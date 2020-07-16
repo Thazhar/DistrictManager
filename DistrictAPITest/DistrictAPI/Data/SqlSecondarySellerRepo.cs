@@ -49,8 +49,8 @@ namespace DistrictAPITest.Data
                 throw new ArgumentNullException(nameof(dis));
             }
 
-            _context.Database.ExecuteSqlRaw("DELETE from secondary_seller WHERE seller_id = @SellerId",
-                new SqlParameter("@SellerId", dis.SellerId));
+            _context.Database.ExecuteSqlRaw("DELETE from secondary_seller WHERE seller_id = @SellerId AND district_id = @DistrictId",
+                new SqlParameter("@SellerId", dis.SellerId), new SqlParameter("@DistrictId", dis.DistrictId));
         }
     }
 }

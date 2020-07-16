@@ -16,7 +16,9 @@
     </div>
     <ul class="districts">
       <li *ngFor="let district of districts" >
-          <span>{{ district.districtName }}</span>
+          <span>{{ district.districtName }}</span>&nbsp;
+          <button class="delete" title="delete district"
+                (click)="deleteDistrict(district)">x</button>
       </li>
     </ul>
   </div>
@@ -33,7 +35,9 @@
     </div>
     <ul class="seller">
       <li *ngFor="let seller of sellers" >
-        <span>{{ seller.sellerName }}</span>
+        <span>{{ seller.sellerName }}</span>&nbsp;
+        <button class="delete" title="delete seller"
+                (click)="deleteSeller(seller)">x</button>
       </li>
     </ul>
   </div>
@@ -53,7 +57,9 @@
     </div>
     <ul class="districts">
       <li *ngFor="let store of stores" >
-        <span>{{ store.storeName }}</span>
+        <span>{{ store.storeName }}</span>&nbsp;
+        <button class="delete" title="delete store"
+                (click)="deleteStore(store)">x</button>
       </li>
     </ul>
   </div>

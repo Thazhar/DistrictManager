@@ -41,4 +41,12 @@ export class SellerService {
         catchError(this.handleError('addSeller', seller))
       );
   }
+
+  deleteSeller(sellerId: number): Observable<{}> {
+    const url = `${this.sellerUrl}/${sellerId}`;
+    return this.http.delete(url)
+      .pipe(
+        catchError(this.handleError('deleteSeller'))
+      );
+  }
 }

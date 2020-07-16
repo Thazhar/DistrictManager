@@ -10,6 +10,7 @@ namespace DistrictAPITest.Data
     {
         IEnumerable<Store> GetAllStores();
         Store GetStoreById(int id);
+        IEnumerable<Store> GetStoresByDistrictId(int id);
         void CreateStore(Store dis);
         void UpdateStore(int id, Store dis);
         void DeleteStore(Store dis);

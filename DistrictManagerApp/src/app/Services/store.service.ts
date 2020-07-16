@@ -29,10 +29,25 @@ export class StoreService {
         );
     }
 
+    getStoresByDistrictId(districtId: number): Observable<Store[]> {
+    const url = `${this.storeUrl}/district/${districtId}`
+    return this.http.get<Store[]>(url).
+    pipe(
+      catchError(this.handleError('getStoresByDistrictId', [])));
+    }
+
   addStore(store: Store): Observable<Store> {
     return this.http.post<Store>(this.storeUrl, store)
       .pipe(
         catchError(this.handleError('addStore', store))
+      );
+  }
+
+  deleteStore(storeId: number): Observable<{}> {
+    const url = `${this.storeUrl}/${storeId}`;
+    return this.http.delete(url)
+      .pipe(
+        catchError(this.handleError('deleteStore'))
       );
   }
 }

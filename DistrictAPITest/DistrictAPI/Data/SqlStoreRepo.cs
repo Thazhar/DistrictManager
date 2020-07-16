@@ -27,6 +27,12 @@ namespace DistrictAPITest.Data
                 .FromSqlRaw("SELECT * FROM store WHERE store_id = @Id", new SqlParameter("@Id", id)).FirstOrDefault();
         }
 
+        public IEnumerable<Store> GetStoresByDistrictId(int id)
+        {
+            return _context.Store.FromSqlRaw("SELECT * FROM store WHERE district_id = @Id", new SqlParameter("@Id", id))
+                .ToList<Store>();
+        }
+
         public void CreateStore(Store dis)
         {
             if (dis == null)

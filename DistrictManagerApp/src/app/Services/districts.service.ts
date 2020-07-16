@@ -40,7 +40,7 @@ export class DistrictsService {
     const url = `${this.districtUrl}/${districtId}`;
     return this.http.delete(url)
       .pipe(
-        catchError(this.handleError('deleteHero'))
+        catchError(this.handleError('deleteDistrict'))
       );
   }
 

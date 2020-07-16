@@ -47,6 +47,18 @@ namespace DistrictAPITest.Controllers
             return NotFound();
         }
 
+        //GET api/store/district/5
+        [HttpGet("district/{id}")]
+        public ActionResult<Store> GetStoreByDistrictId(int id)
+        {
+            var storeItem = _repository.GetStoresByDistrictId(id);
+            if (storeItem != null)
+            {
+                return Ok(storeItem);
+            }
+            return NotFound();
+        }
+
         //POST api/store
         [HttpPost]
         public ActionResult<StoreReadDto> CreateStore(StoreCreateDto storeCreateDto)

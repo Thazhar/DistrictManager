@@ -80,5 +80,20 @@ export class AddDataComponent implements OnInit {
     this.storeService.addStore(newStore)
       .subscribe(store => this.stores.push(store))
   }
+
+  deleteDistrict(district: District): void {
+    this.districts = this.districts.filter(d => d !== district);
+    this.districtsService.deleteDistrict(district.districtId).subscribe();
+  }
+
+  deleteSeller(seller: Seller): void {
+    this.sellers = this.sellers.filter(d => d !== seller);
+    this.sellerService.deleteSeller(seller.sellerId).subscribe();
+  }
+
+  deleteStore(store: Store): void {
+    this.stores = this.stores.filter(d => d !== store);
+    this.storeService.deleteStore(store.storeId).subscribe();
+  }
 }
 
