@@ -50,4 +50,10 @@ export class DistrictsService {
         catchError(this.handleError('addDistrict', district))
       );
   }
+
+  patchDistrict(districtId: number, patchDoc: string): Observable<{}> {
+    const url = `${this.districtUrl}/ ${districtId}`;
+    return this.http.patch(url, patchDoc)
+      .pipe(catchError(this.handleError('patchDistrict')));
+  }
 }

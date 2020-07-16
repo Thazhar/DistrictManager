@@ -3,6 +3,12 @@
     <h2>{{district.districtName | uppercase }} Details:</h2>
     <div id ='first'>
       <div><span>Primary Seller:</span> {{seller.sellerName}}</div>
+      <select style="color: #333333" [(ngModel)]="selectedPrimarySeller">
+        <option style="color: #333333" *ngFor="let seller of sellers" [ngValue]="seller.sellerId">{{seller.sellerName}}</option>
+      </select>
+      <button (click)="updatePrimarySeller(selectedPrimarySeller, district.districtId)">
+        update
+      </button>
       <div><span>Secondary Sellers:</span></div>
       <select style="color: #333333" [(ngModel)]="selectedSeller">
         <option style="color: #333333" *ngFor="let seller of sellers" [ngValue]="seller.sellerId">{{seller.sellerName}}</option>

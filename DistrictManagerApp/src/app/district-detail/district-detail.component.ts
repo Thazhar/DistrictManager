@@ -9,6 +9,7 @@ import { SellerService } from '../Services/seller.service';
 import { SecondarySellerService } from '../Services/secondary-seller.service';
 import {Store} from '../Models/store';
 import {StoreService} from '../Services/store.service';
+import {JsonObject, JsonValue} from '@angular/compiler-cli/ngcc/src/packages/entry_point';
 
 
 @Component({
@@ -24,6 +25,7 @@ export class DistrictDetailComponent implements OnInit {
   stores: Store[];
   sellers: Seller[];
   selectedSeller: number;
+  selectedPrimarySeller: number;
 
 
   constructor(
@@ -42,10 +44,13 @@ export class DistrictDetailComponent implements OnInit {
   private GetObjectsById() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.districtsService.getDistrictById(id)
-      .subscribe(district => {this.district = district;
-      this.sellerService.getSellerById(district.sellerId).subscribe(seller => this.seller = seller)});
+      .subscribe(district => {this.district = district; this.getPrimarySeller(district.sellerId)});
     this.getAllSellersForDistrict(id);
     this.getStoresByDistrictId(id);
+  }
+
+  getPrimarySeller(sellerId: number) {
+    this.sellerService.getSellerById(sellerId).subscribe(seller => this.seller = seller)
   }
 
   private getAllSellersForDistrict(districtId: number) {
@@ -76,8 +81,15 @@ export class DistrictDetailComponent implements OnInit {
 
   private createSecondarySeller(sellerId: number, districtId: number): void {
     const newSecondarySeller: SecondarySeller = {sellerId, districtId} as SecondarySeller;
-    console.log(this.secondarySellerService);
     this.secondarySellerService.addSecondarySeller(newSecondarySeller)
       .subscribe(secondarySeller => this.getSeller(secondarySeller.sellerId));
   }
+
+  private updatePrimarySeller(sellerId: number, districtId: number) {
+  const patchDoc = `[{"op": "replace", "path": "/SellerId", "value": ${sellerId}}]`;
+  const temp = JSON.parse(patchDoc);
+    this.districtsService.patchDistrict(districtId, temp).subscribe();
+    this.getPrimarySeller(sellerId);
+  }
+
 }
