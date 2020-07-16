@@ -1,0 +1,61 @@
+<h2> Data creation: </h2>
+<div class ='container'>
+  <div id="first">
+    <h3>Districts</h3>
+    <div>
+      <label>New district name:
+        <input style="color: #333333" #districtName />
+      </label>
+      <select style="color: #333333" [(ngModel)]="selectedSeller">
+        <option style="color: #333333" *ngFor="let seller of sellers" [ngValue]="seller.sellerId">{{seller.sellerName}}</option>
+      </select>
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button (click)="createDistrict(districtName.value, selectedSeller.sellerId)">
+        add
+      </button>
+    </div>
+    <ul class="districts">
+      <li *ngFor="let district of districts" >
+          <span>{{ district.districtName }}</span>
+      </li>
+    </ul>
+  </div>
+  <div id="second">
+    <h3>Sellers</h3>
+    <div>
+      <label>New Seller name:
+        <input style="color: #333333" #sellerName />
+      </label>
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button (click)="createSeller(sellerName.value)">
+        add
+      </button>
+    </div>
+    <ul class="seller">
+      <li *ngFor="let seller of sellers" >
+        <span>{{ seller.sellerName }}</span>
+      </li>
+    </ul>
+  </div>
+  <div id="third">
+    <h3>Stores</h3>
+    <div>
+      <label>New store name:
+        <input style="color: #333333" #storeName />
+      </label>
+      <select style="color: #333333" [(ngModel)]="selectedDistrict">
+        <option style="color: #333333" *ngFor="let district of districts" [ngValue]="district.districtId">{{district.districtName}}</option>
+      </select>
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button (click)="createStore(storeName.value, selectedDistrict.sellerId)">
+        add
+      </button>
+    </div>
+    <ul class="districts">
+      <li *ngFor="let store of stores" >
+        <span>{{ store.storeName }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+

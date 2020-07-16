@@ -42,5 +42,12 @@ export class DistrictsService {
       .pipe(
         catchError(this.handleError('deleteHero'))
       );
-  };
+  }
+
+  addDistrict (district: District): Observable<District> {
+    return this.http.post<District>(this.districtUrl, district)
+      .pipe(
+        catchError(this.handleError('addDistrict', district))
+      );
+  }
 }

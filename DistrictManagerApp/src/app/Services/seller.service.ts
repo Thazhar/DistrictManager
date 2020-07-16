@@ -19,13 +19,26 @@ export class SellerService {
 
   constructor(
     private http: HttpClient,
-    private httpErrorHandler: HttpErrorHandlerService){
+    private httpErrorHandler: HttpErrorHandlerService) {
     this.handleError = httpErrorHandler.createHandleError('SellerService');
   }
 
-  getSellerById (sellerId: number): Observable<Seller> {
+  getSellerById(sellerId: number): Observable<Seller> {
     const url = this.sellerUrl + `/${sellerId}`;
     return this.http.get<Seller>(url);
   }
 
+  getAllSellers(): Observable<Seller[]> {
+    return this.http.get<Seller[]>(this.sellerUrl)
+      .pipe(
+        catchError(this.handleError('getAllSellers', []))
+      );
+  }
+
+  addSeller(seller: Seller): Observable<Seller> {
+    return this.http.post<Seller>(this.sellerUrl, seller)
+      .pipe(
+        catchError(this.handleError('addSeller', seller))
+      );
+  }
 }

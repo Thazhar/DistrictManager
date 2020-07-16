@@ -2,12 +2,11 @@
 
 <ul class="districts">
   <li *ngFor="let district of districts" >
-    <a routerLink="/districts/{{district.districtId}}" [state]="{ districtId: district.districtId.toString(), districtName: district.districtName, sellerId: district.sellerId} ">
+    <a routerLink="/districts/{{district.districtId}}">
       <span>{{ district.districtName }}</span>
-      <button class="delete" title="delete district"
-      (click)="delete(district)">x</button>
     </a>
+    <button class="delete" title="delete district"
+            (click)="delete(district)">x</button>
   </li>
 </ul>
 
-<router-outlet></router-outlet>

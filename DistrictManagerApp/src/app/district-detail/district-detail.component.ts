@@ -1,11 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Location } from '@angular/common';
 
 import { DistrictsService } from '../Services/districts.service';
 import { District } from '../Models/district';
-import {Seller} from '../Models/seller';
-import {SellerService} from '../Services/seller.service';
+import { Seller } from '../Models/seller';
+import { SellerService } from '../Services/seller.service';
 
 
 @Component({
@@ -20,10 +19,8 @@ export class DistrictDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private districtsService: DistrictsService,
     private sellerService: SellerService,
-    private location: Location
   ) { }
 
   ngOnInit(): void {
